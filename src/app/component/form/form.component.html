@@ -1,0 +1,72 @@
+
+<div class="container d-flex justify-conten-center mt-5">
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+             <label for="nombre" class="form-label">Nombre</label>
+             <input type="text" class="form-control" id="nombre" placeholder="Andres" required #nombre>
+           
+         </div>
+         <div class="col-md-4">
+                 <label for="apellido" class="form-label">Apellido</label>
+                 <input type="text" class="form-control" id="apellido" placeholder="Montero" required #apellido>
+         </div>
+          <div class="col-md-3">
+            <label for="start" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="start" name="trip-start" value="2018-07-22" min="1800-01-01" max="2024-12-31" required #fecha />
+            </div>
+         <div class="form-check">
+            <input type="radio" [(ngModel)]="genero" name="genero" value="Masculino" class="form-check-input" id="masculino" name="genero" required #masc>
+            <label class="form-check-label" for="masculino">Masculino</label>            
+         </div>
+         <div class="form-check">
+            <input type="radio" [(ngModel)]="genero" name="genero" value="Femenino" class="form-check-input" id="femenino" name="genero" required #fem>
+            <label class="form-check-label" for="femenino">Femenino</label>
+          </div>
+         <div class="col-md-3">
+                 <label for="correo"  class="form-label">Correo Elentronico</label>
+                 <input type="email" placeholder="email@email.com" class="form-control" id="correo" required>
+         </div>
+         <div class="col-12">
+             <div class="form-check">
+                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                 <label class="form-check-label" for="invalidCheck"></label>
+                     Confirma que sus datos estan correctos?
+             </div>
+         </div>
+         <div class="col-12">
+         <button class="btn btn-primary" (click)="crear(nombre.value, apellido.value, fecha.value, masc.value, fem.value)" type="submit">Enviar</button>
+         </div>
+         </form>
+</div>
+
+<br>
+<br>
+
+<div class="container-fluid" >
+    <table class="table">
+        <thead>
+          <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Fecha de Nacimiento</th>
+              <th scope="col">Genero</th>
+              <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let persona of data; ">
+            <th scope="row">{{persona.id}}</th>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.fechaNac}}</td>
+            <td>{{persona.genero}}</td>
+            <td>
+              <i (click)="eliminar(persona.id)"  class="mx-3 manito fa-solid fa-trash-can"></i>
+              <i (click)="editar()" class="manito fa-solid fa-pen-to-square"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

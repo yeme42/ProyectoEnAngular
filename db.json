@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "nombre": "yerinson",
+      "apellido": "muentes",
+      "fechaNac": "08-05-1998",
+      "genero": "masculino",
+      "id": 3
+    },
+    {
+      "nombre": "jose",
+      "apellido": "hernandez",
+      "fechaNac": "2010-06-22",
+      "genero": "Masculino",
+      "id": 8
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
